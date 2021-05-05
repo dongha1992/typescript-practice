@@ -1,6 +1,7 @@
 import React from 'react';
 import * as S from './style';
 import Image from 'next/image';
+import { Label } from '@components/Label';
 
 interface ITimeProps {
   day: number;
@@ -26,7 +27,9 @@ export const Intro: React.FC<IIntroProps> = ({ imageUrl }) => {
         objectFit="cover"
         loading="eager"
       />
-      <S.Information></S.Information>
+      <S.Information>
+        <Label>asd</Label>
+      </S.Information>
     </S.Container>
   );
 };
