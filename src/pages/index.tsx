@@ -1,7 +1,12 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Intro } from '@components/Intro';
 import styled from 'styled-components';
 
 const Home = ({}) => {
-  return <div>dd</div>;
+  return (
+    <>
+      <Intro imageUrl="/images/intro.png" />
+    </>
+  );
 };
 export default Home;
