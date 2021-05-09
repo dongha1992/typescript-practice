@@ -31,12 +31,6 @@ export const Comment = styled.div`
   flex-direction: column;
   align-items: flex-start;
 `;
-export const SliderWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  overflow: scroll;
-  padding-left: 20px;
-`;
 
 export const Image = styled.img`
   height: 100%;

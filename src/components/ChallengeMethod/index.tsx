@@ -13,6 +13,7 @@ export interface IChallengeMethodProps {
 export interface ICarouselSettingProps {
   dragSpeed: number;
   itemSideOffsets: number;
+  children?: React.ReactNode;
 }
 
 const setting: ICarouselSettingProps = {
@@ -73,12 +74,11 @@ export const ChallengeMethod: React.FC<IChallengeMethodProps> = ({
           </Label>
         ))}
       </S.Comment>
-      <S.SliderWrapper>
-        <Carousel {...setting} />
+      <Carousel {...setting}>
         {SLIDER.map((image, index) => (
           <S.Image src={image} alt="image" key={index} />
         ))}
-      </S.SliderWrapper>
+      </Carousel>
     </S.Container>
   );
 };
