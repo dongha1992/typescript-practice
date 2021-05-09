@@ -3,22 +3,24 @@ import Image from 'next/image';
 import * as S from './style';
 import { METHOD_CONTENT, COMMENTS, SLIDER } from '@constants/word';
 import { Label } from '@components/Label';
-import { Carousel } from '@components/Carousel';
+
+import Slider from 'react-slick';
 import Colors from '@constants/Colors';
 
 export interface IChallengeMethodProps {
   registerCount: number;
 }
 
-export interface ICarouselSettingProps {
-  dragSpeed: number;
-  itemSideOffsets: number;
-  children?: React.ReactNode;
-}
-
-const setting: ICarouselSettingProps = {
-  dragSpeed: 1.25,
-  itemSideOffsets: 15,
+const settings = {
+  dots: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  centerMode: true,
+  infinite: false,
+  arrows: false,
+  customPaging: () => <div />,
+  centerPadding: '20px',
 };
 
 export const ChallengeMethod: React.FC<IChallengeMethodProps> = ({
@@ -74,11 +76,19 @@ export const ChallengeMethod: React.FC<IChallengeMethodProps> = ({
           </Label>
         ))}
       </S.Comment>
-      <Carousel {...setting}>
-        {SLIDER.map((image, index) => (
-          <S.Image src={image} alt="image" key={index} />
-        ))}
-      </Carousel>
+      <S.SliderWrapper>
+        <Slider {...settings}>
+          {SLIDER.map((image, index) => (
+            <S.Image
+              src={image}
+              alt="image"
+              key={index}
+              object-fit
+              isLast={index === SLIDER.length + 1}
+            />
+          ))}
+        </Slider>
+      </S.SliderWrapper>
     </S.Container>
   );
 };

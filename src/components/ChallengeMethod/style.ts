@@ -32,8 +32,35 @@ export const Comment = styled.div`
   align-items: flex-start;
 `;
 
-export const Image = styled.img`
-  height: 100%;
-  width: 90%;
-  padding-right: 10px;
+export const SliderWrapper = styled.div`
+  width: 100vw;
+  max-width: 500px;
+  .slick-slider {
+    .slick-list {
+      .slick-track {
+        .slick-slide {
+        }
+      }
+    }
+    .slick-dots {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      li {
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        background-color: #cbced3;
+        margin: 20px 10px 10px;
+      }
+    }
+    .slick-dots li.slick-active {
+      background-color: #767e90;
+    }
+  }
+`;
+
+export const Image = styled.img<{ isLast: boolean }>`
+  padding-right: ${(props) => (props.isLast ? '0px' : '8px')};
+  object-fit: fill;
 `;
