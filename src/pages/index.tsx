@@ -1,7 +1,13 @@
 import React, { Fragment, useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { Intro } from '@components/Intro';
+import { ChallengeMethod } from '@components/ChallengeMethod';
+import { MiracleMorningInformation } from '@components/MiracleMorningInformation';
+import { AuthenticationMethod } from '@components/AuthenticationMethod';
+import { Review } from '@components/Review';
+import { Tab } from '@components/Tab';
 import Network from '@utils/Network';
+import { InView } from 'react-intersection-observer';
 import { useInterval } from '@hooks/useInterval';
 import {
   MILLISECOND,
@@ -48,9 +54,28 @@ const Home = ({ data }) => {
   return (
     <>
       <Intro
-        imageUrl="/images/img.png"
+        imageUrl="/images/intro.png"
         timeData={{ day, hour, minute, second }}
       />
+      <MainContent>
+        <Tab
+          reviewCount={
+            challenge.reviews.comments.length >= 100
+              ? '100+'
+              : `${challenge.reviews.comments.length}`
+          }
+        />
+        <InView>
+          <ChallengeMethod />
+        </InView>
+        <InView>
+          <MiracleMorningInformation />
+          <AuthenticationMethod />
+        </InView>
+        <InView>
+          <Review />
+        </InView>
+      </MainContent>
     </>
   );
 };
@@ -66,3 +91,6 @@ export const getStaticProps = async () => {
     props: { data },
   };
 };
+
+const MainContent = styled.div``;
+const Section = styled.div``;

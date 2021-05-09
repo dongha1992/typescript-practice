@@ -11,7 +11,7 @@ export const useInterval = (callback: () => void, delay: number) => {
   // }, []);
 
   const callbackRef = useRef(callback);
-  console.log(new Date(), 'dd');
+
   useEffect(() => {
     callbackRef.current = callback;
   }, [callback]);
