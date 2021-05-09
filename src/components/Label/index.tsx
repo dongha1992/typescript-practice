@@ -14,8 +14,7 @@ export interface ILabelProps {
   width?: string;
   height?: string;
   margin?: string;
-  padding?: string;
-  size?: number;
+  padding?: number;
   weight?: number;
   backgroundColor?: string;
   color?: string;
@@ -24,6 +23,9 @@ export interface ILabelProps {
   lineHeight?: string;
   pointer?: boolean;
   opacity?: number;
+  fontWeight?: number;
+  borderRadius?: number;
+  size?: number;
 }
 
 const defaultProps = {

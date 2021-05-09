@@ -66,7 +66,9 @@ const Home = ({ data }) => {
           }
         />
         <InView>
-          <ChallengeMethod />
+          <ChallengeMethod
+            registerCount={challenge.registerInfo.registerCount}
+          />
         </InView>
         <InView>
           <MiracleMorningInformation />

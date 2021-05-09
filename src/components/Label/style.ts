@@ -11,7 +11,7 @@ export const Container = styled.div<ILabelProps>`
   width: ${(props) => props.width && props.width};
   height: ${(props) => props.height && props.height};
   margin: ${(props) => props.margin && props.margin};
-  padding: ${(props) => props.padding && props.padding};
+  padding: ${(props) => props.padding && `${props.padding}px`};
   font-size: ${(props) => props.size && `${props.size}px`};
   font-weight: ${(props) => props.weight && props.weight};
   background-color: ${(props) =>
@@ -22,5 +22,6 @@ export const Container = styled.div<ILabelProps>`
   line-height: ${(props) => props.lineHeight && props.lineHeight};
   cursor: ${(props) => (props.pointer ? 'pointer' : 'static')};
   opacity: ${(props) => props.opacity && props.opacity};
+  border-radius: ${(props) => props.borderRadius && `${props.borderRadius}px`};
   white-space: pre-wrap;
 `;

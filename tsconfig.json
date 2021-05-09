@@ -26,6 +26,12 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/utils/Network.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/utils/Network.js",
+    "src/constants/config.js"
+  ],
   "exclude": ["node_modules"]
 }

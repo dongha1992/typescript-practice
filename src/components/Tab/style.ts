@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Colors from '@constants/Colors';
 
 export const Container = styled.div`
-  position: fixed;
+  position: sticky;
   width: 100%;
   display: flex;
   justify-content: space-between;
