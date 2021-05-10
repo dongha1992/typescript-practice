@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^10.2.0",
     "@types/node": "^15.0.2",
     "@types/react": "^17.0.5",
     "axios": "^0.21.1",

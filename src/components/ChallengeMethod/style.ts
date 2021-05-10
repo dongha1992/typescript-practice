@@ -33,8 +33,6 @@ export const Comment = styled.div`
 `;
 
 export const SliderWrapper = styled.div`
-  width: 100vw;
-  max-width: 500px;
   .slick-slider {
     .slick-list {
       .slick-track {
@@ -62,5 +60,4 @@ export const SliderWrapper = styled.div`
 
 export const Image = styled.img<{ isLast: boolean }>`
   padding-right: ${(props) => (props.isLast ? '0px' : '8px')};
-  object-fit: fill;
 `;

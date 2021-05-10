@@ -83,7 +83,6 @@ export const ChallengeMethod: React.FC<IChallengeMethodProps> = ({
               src={image}
               alt="image"
               key={index}
-              object-fit
               isLast={index === SLIDER.length + 1}
             />
           ))}

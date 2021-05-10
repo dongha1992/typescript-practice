@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { Intro } from '@components/Intro';
 import { ChallengeMethod } from '@components/ChallengeMethod';
-import { MiracleMorningInformation } from '@components/MiracleMorningInformation';
+
 import { AuthenticationMethod } from '@components/AuthenticationMethod';
 import { Review } from '@components/Review';
 import { Tab } from '@components/Tab';
@@ -50,7 +50,7 @@ const Home = ({ data }) => {
   }, [second]);
 
   useInterval(getTimer, 1000);
-
+  console.log(data, 'data');
   return (
     <>
       <Intro
@@ -71,8 +71,13 @@ const Home = ({ data }) => {
           />
         </InView>
         <InView>
-          <MiracleMorningInformation />
-          <AuthenticationMethod />
+          <AuthenticationMethod
+            startDate={challenge.startDate}
+            endDate={challenge.endDate}
+            goal={challenge.goal}
+            authenticationGoodExamples={challenge.authenticationGoodExamples}
+            authenticationBadExamples={challenge.authenticationBadExamples}
+          />
         </InView>
         <InView>
           <Review />
