@@ -27,7 +27,6 @@ export interface ILabelProps {
   borderRadius?: number;
   size?: number;
 }
-
 const defaultProps = {
   size: 16,
   weight: 400,

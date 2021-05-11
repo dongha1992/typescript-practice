@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
   margin-bottom: 32px;
 `;
 
-export const ImageWrapper = styled.div`
+export const ImageContainer = styled.div`
   display: flex;
 `;
+
+export const Image = styled.img``;
+
+export const Grid = styled.div``;

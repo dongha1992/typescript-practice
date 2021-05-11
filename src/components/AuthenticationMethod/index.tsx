@@ -1,6 +1,7 @@
 import React from 'react';
 import { Label } from '@components/Label';
 import Image from 'next/image';
+
 import { AuthenticationExample, Goal } from 'src/types/ChallengeType';
 import { dayFormatter } from '@tools/getDay';
 import * as S from './style';
@@ -32,17 +33,21 @@ export const AuthenticationMethod: React.FC<IAuthenticationMethodProps> = ({
       </S.Wrapper>
       <S.Wrapper>
         <Label>이렇게 찍어주세요!</Label>
-        <S.ImageWrapper>
-          {authenticationGoodExamples.map((data) => (
-            <Image
-              src={data.image}
-              alt="image"
-              width={100}
-              height={100}
-              layout="responsive"
-            />
-          ))}
-        </S.ImageWrapper>
+        <S.ImageContainer>
+          <S.Grid>
+            {authenticationBadExamples.map((data) => (
+              <div>
+                <S.Image
+                  src={data.image}
+                  alt="image"
+                  width={150}
+                  height={150}
+                />
+                {data.text}
+              </div>
+            ))}
+          </S.Grid>
+        </S.ImageContainer>
       </S.Wrapper>
       <S.Wrapper>
         <Label>지난 인증샷</Label>
